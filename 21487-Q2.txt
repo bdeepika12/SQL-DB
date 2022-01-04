@@ -1,0 +1,7 @@
+SELECT FIRST_NAME,DEPARTMENT 
+FROM Organization
+WHERE (DEPARTMENT,SALARY) in (SELECT DEPARTMENT, MAX(SALARY) FROM Organization group by DEPARTMENT)
+
+  OUTPUT:
+Msg 4145, Level 15, State 1, Line 16
+An expression of non-boolean type specified in a context where a condition is expected, near ','.
